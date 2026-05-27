@@ -83,11 +83,6 @@ endmodule
 
 
 //=============================================================================== 
-// Тестбенч проверяет:
-// Передачу обычных данных без TLAST;
-// Корректную передачу TLAST и завершающего слова 0xdeadbeef;
-// Поведение при паузах (wready = 0, tvalid = 0);
-// Передачу нескольких пакетов последовательно.
 
 `timescale 1ns / 1ps
 
@@ -312,9 +307,3 @@ module tb_axi4s_to_wdata_wstrb;
 
 endmodule
 
-
-// Как запустить:
-// iverilog tb_axi4s_to_wdata_wstrb.v axi4s_to_wdata_wstrb.v -o tb
-// vvp tb
-// # или: vsim -c tb_axi4s_to_wdata_wstrb
-// Файл tb_axi4s_to_wdata_wstrb.vcd будет содержать трассировку сигналов для Waveform Viewer.
